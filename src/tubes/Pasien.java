@@ -7,33 +7,52 @@ package tubes;
 
 /**
  *
- * @author Kukuh Sanddi
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
  */
-public class Pasien extends Orang{
-    private int lvPasien;
+public class Pasien extends Orang {
+    private int idp;
+    private String g;
 
-    public int getLvPasien() {
-        return lvPasien;
+    public Pasien(int idp, String nama) {
+        super(nama);
+        this.idp = idp;
     }
 
-    public void setLvPasien(int lvPasien) {
-        this.lvPasien = lvPasien;
+    public int getIdp() {
+        return idp;
+    }
+
+    public void setIdp(int idp) {
+        this.idp = idp;
     }
     
-    public String gelar {
-        if (lvPasien == 1){
-            return "Tuan "+o.getnama();
-        }
-        else if (lvPasien == 2){
-            return "Nyonya "+o.getnama();
-        }
-        else if (lvPasien == 3){
-            return "Nona "+o.getnama();
-        }
-        return "(tidak teridentifikasi)";
-        
+    @Override
+    public String getGelar() {
+        return super.gelar;
     }
+    
+    public void setGelar(int vGelar) {
+        switch(vGelar) {
+            case 1:
+                gelar = "Tuan";
+                g = "Tuan "+getNama();
+            case 2:
+                gelar = "Nyonya";
+                g = "Nyonya "+getNama();
+                
+            case 3:
+                gelar = "Nona";
+                g = "Nona "+getNama();  
+        }
+    }
+
+    @Override
+    public String toString() {
+        return "Pasien{" + "IDP =" + idp + ", Nama = " + g + '}';
+    }
+    
+    
+    
 }
 
-}
 

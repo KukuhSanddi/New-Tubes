@@ -7,51 +7,33 @@ package tubes;
 
 /**
  *
- * @author Kukuh Sanddi
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
  */
-public class Orang {
-    protected String nama;
-    protected char jenisKelamin = 'L';
-    protected int tgl;
-    protected int bln;
-    protected int thn;
-    protected int umur;
+public abstract class Orang {
     
-    public String getNama(){
+    public String nama;
+    public int vGelar;
+    public String gelar;
+    
+    public Orang(String nama) {
+        this.nama = nama;
+    }
+
+    public String getNama() {
         return nama;
     }
 
     public void setNama(String nama) {
         this.nama = nama;
     }
+
+    public abstract String getGelar();
+
+    public abstract void setGelar(int vGelar);
+
     
-    public char getJenisKelamin(){
-        return jenisKelamin;
-    }
     
-    public void setJenisKelamin(char jenisKelamin){
-        if (jenisKelamin =='L'){
-            System.out.println("Laki - laki");
-        }else
-            System.out.println("perempuan");
-    }
     
-    public String getTglLahir(){
-        String s = tgl+"-"+bln+"-"+thn;
-        return s;
-    }
     
-    public void setTglLahir(String s){
-        
-    }
-    
-    public int getUmur(){
-            return umur;
-    }
-    
-    public void setUmur(int umur){
-        Date kini = new Date();
-        umur = kini.getYear()-thn;
-    }
-}
+ }
 
