@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubes;
+package Model;
 
 /**
  *
@@ -34,16 +34,13 @@ public class Ruangan {
         String p = "";
         String d = "";
         String diag = "";
-        for(int j=0;j<numOfPasienInap;j++){
+        for(int j=0; j<numOfPasienInap; j++){
             p = p + daftarPasien[j].getPasien() + "\n";
             d = d + daftarPasien[j].getDokter() + "\n";
-//            for(int i=0;i<daftarPasien[j].getDiagnosa().length;i++){
-//
-//            }
         }
-        tmp = tmp + "Ruangan 1\n"+
-                "Daftar Pasien\n"+ p +
-                "Dokter 1 "+ daftarPasien[0].getDokter();
+        tmp = tmp + "Ruangan "+ noRuang +"\n"+
+                "Daftar Pasien : \n"+ p +
+                "Dokter : \n"+ d;
 //                "Diagnosa 1 "+ daftarPasien[0].;
         return tmp;
 //        return "Ruangan{" + "daftarPasien=" + daftarPasien[0].getPasien() + " max=" + max + ", noRuang=" + noRuang + ", numOfPasienInap=" + numOfPasienInap + '}';

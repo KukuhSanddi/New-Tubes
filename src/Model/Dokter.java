@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubes;
+package Model;
 
 /**
  *
@@ -14,12 +14,16 @@ public class Dokter extends Orang {
     private String g;
     
 
-    public Dokter(int nip, String nama) {
-        super(nama);
+//    public Dokter(int nip, String nama) {
+//        super(nama);
+//        this.nip = nip;
+//    }
+
+    public Dokter(int nip, String nama, int vGelar, int umur) {
+        super(nama, vGelar, umur);
         this.nip = nip;
     }
-
-
+    
     public int getNip() {
         return nip;
     }
@@ -71,7 +75,7 @@ public class Dokter extends Orang {
 
     @Override
     public String toString() {
-        return "Dokter{" + "NIP =" + nip + ", Nama = " + g + '}';
+        return "Dokter {" + "NIP =" + nip + ", Nama = " + g + '}';
     }
     
     

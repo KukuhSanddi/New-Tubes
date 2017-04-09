@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package tubes;
+package Model;
 
 /**
  *
@@ -14,11 +14,18 @@ public abstract class Orang {
     public String nama;
     public int vGelar;
     public String gelar;
+    public int umur;
     
-    public Orang(String nama) {
-        this.nama = nama;
-    }
+//    public Orang(String nama) {
+//        this.nama = nama;
+//    }
 
+    public Orang(String nama, int vGelar, int umur) {
+        this.nama = nama;
+        this.vGelar = vGelar;
+        this.umur = umur;
+    }
+    
     public String getNama() {
         return nama;
     }
