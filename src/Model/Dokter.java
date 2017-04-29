@@ -21,6 +21,7 @@ public class Dokter extends Orang {
 
     public Dokter(int nip, String nama, int vGelar, int umur) {
         super(nama, vGelar, umur);
+        this.setGelar(vGelar);
         this.nip = nip;
     }
     
@@ -75,7 +76,7 @@ public class Dokter extends Orang {
 
     @Override
     public String toString() {
-        return "Dokter {" + "NIP =" + nip + ", Nama = " + g + '}';
+        return "Dokter {" + "NIP =" + nip + ", Nama = " + g + ", Umur = " + umur + '}';
     }
     
     

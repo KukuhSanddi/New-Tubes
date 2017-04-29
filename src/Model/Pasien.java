@@ -22,6 +22,7 @@ public class Pasien extends Orang {
 
     public Pasien(int idp, String nama, int vGelar, int umur) {
         super(nama, vGelar, umur);
+        this.setGelar(vGelar);
         this.idp = idp;
     }
 
@@ -42,17 +43,17 @@ public class Pasien extends Orang {
     public void setGelar(int vGelar) {
         switch(vGelar) {
             case 1:
-                gelar = "Tuan";
+                super.gelar = "Tuan";
                 g = "Tuan "+getNama();
                 break;
                 
             case 2:
-                gelar = "Nyonya";
+                super.gelar = "Nyonya";
                 g = "Nyonya "+getNama();  
                 break;  
                 
             case 3:
-                gelar = "Nona";
+                super.gelar = "Nona";
                 g = "Nona "+getNama();  
                 break;
         }
@@ -60,7 +61,7 @@ public class Pasien extends Orang {
 
     @Override
     public String toString() {
-        return "Pasien {" + "IDP =" + idp + ", Nama = " + g + '}';
+        return "Pasien {" + "IDP =" + idp + ", Nama = " + g + ", Umur = " + umur + '}';
     }
     
     

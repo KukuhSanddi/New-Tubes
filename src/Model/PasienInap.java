@@ -5,6 +5,9 @@
  */
 package Model;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  *
  * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
@@ -12,14 +15,12 @@ package Model;
 public class PasienInap {
     private Pasien pasien;
     private Dokter dokter;
-    private String diagnosa[];//diganti jadi array list
-    private int numOfDiagnosa;
+    private ArrayList<String> diagnosa;
     
     public PasienInap(Pasien p, Dokter d){
         pasien = p;
         dokter = d;
-        diagnosa = new String[5];
-        numOfDiagnosa = 0;
+        diagnosa = new ArrayList();
     }
 
     public Pasien getPasien() {
@@ -39,17 +40,29 @@ public class PasienInap {
     }
    
     public void addDiagnosa(String d){
-        if(numOfDiagnosa < diagnosa.length){
-            diagnosa[numOfDiagnosa] = d;
-            numOfDiagnosa ++;
-        }
-        else {
-            
-        }
+       diagnosa.add(d);
     }
     
-    public String[] getDiagnosa(){
-        return diagnosa;
+    public String getDiagnosa(int id){
+        return diagnosa.get(id);
+    }
+
+    @Override
+    public String toString() {
+//        String P, D, Di, PI;
+//        P = "Pasien = " + pasien;
+//        D = "Dokter = "+ dokter;
+//        
+//        ArrayList<String> dgg = new ArrayList();
+//        for (int i = 0; i < diagnosa.size(); i++){
+//            diagnosa.get(i);
+//            
+//        }
+        
+        
+        return "PasienInap{" + "Pasien = " + pasien + 
+                               "Dokter = " + dokter +
+                               "Diagnosa = " + diagnosa + '}';
     }
     
     
