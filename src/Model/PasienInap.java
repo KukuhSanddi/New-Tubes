@@ -23,6 +23,8 @@ public class PasienInap {
         diagnosa = new ArrayList();
     }
 
+    
+    
     public Pasien getPasien() {
         return pasien;
     }
@@ -58,12 +60,14 @@ public class PasienInap {
 //            diagnosa.get(i);
 //            
 //        }
+        String Pasien   = "Pasien      = " + pasien;
+        String Dokter   = "Dokter      = " + dokter;
+        String Diagnosa = "Diagnosa    = " + diagnosa;
         
-        
-        return "PasienInap{" + "Pasien = " + pasien + 
-                               "Dokter = " + dokter +
-                               "Diagnosa = " + diagnosa + '}';
+        return Pasien + '\n' + Dokter + '\n' + Diagnosa;
     }
+
+    
     
     
 }

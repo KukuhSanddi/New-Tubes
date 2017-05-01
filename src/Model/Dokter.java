@@ -10,8 +10,9 @@ package Model;
  * @author Kukuh Sanddi,Muhammad Rifky Putra Ananda
  */
 public class Dokter extends Orang {
-    private int nip;
+//    private int nip;
     private String g;
+    private String nip;
     
 
 //    public Dokter(int nip, String nama) {
@@ -19,20 +20,34 @@ public class Dokter extends Orang {
 //        this.nip = nip;
 //    }
 
-    public Dokter(int nip, String nama, int vGelar, int umur) {
+//    public Dokter(int nip, String nama, int vGelar, int umur) {
+//        super(nama, vGelar, umur);
+//        this.setGelar(vGelar);
+//        this.nip = nip;
+//    }
+//    
+//    public int getNip() {
+//        return nip;
+//    }
+//
+//    public void setNip(int nip) {
+//        this.nip = nip;
+//    }
+
+    public Dokter(String nip, String nama, int vGelar, int umur) {
         super(nama, vGelar, umur);
         this.setGelar(vGelar);
         this.nip = nip;
     }
-    
-    public int getNip() {
+
+    public String getNip() {
         return nip;
     }
 
-    public void setNip(int nip) {
+    public void setNip(String nip) {
         this.nip = nip;
     }
-    
+
     @Override
     public String getGelar() {
         return super.gelar;
@@ -74,9 +89,18 @@ public class Dokter extends Orang {
         
     }
 
+//    @Override
+//    public String toString() {
+//        return "Dokter {" + "NIP =" + nip + ", Nama = " + g + ", Umur = " + umur + '}';
+//    }
+    
     @Override
     public String toString() {
-        return "Dokter {" + "NIP =" + nip + ", Nama = " + g + ", Umur = " + umur + '}';
+        String NIP   = "NIP           : " + nip;
+        String nmDok = "Nama          : " + g;
+        String umDok = "Umur          : " + umur;
+        
+        return NIP + '\n' + nmDok + '\n' + umDok + '\n';
     }
     
     

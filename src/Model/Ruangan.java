@@ -13,13 +13,48 @@ import java.util.ArrayList;
  */
 public class Ruangan {
     private PasienInap daftarPasien[];
-    private int noRuang;
+//    private int noRuang;
+    private String noRuang;
     private int numOfPasienInap;
 
-    public Ruangan(int noRuang) {
+//    public Ruangan(int noRuang) {
+//        this.noRuang = noRuang;
+//        daftarPasien = new PasienInap[4];
+//    }
+//
+//    public int getNoRuang() {
+//        return noRuang;
+//    }
+//
+//    public void setNoRuang(int noRuang) {
+//        this.noRuang = noRuang;
+//    }
+    
+    public Ruangan(String noRuang){
         this.noRuang = noRuang;
         daftarPasien = new PasienInap[4];
     }
+
+    public String getNoRuang() {
+        return noRuang;
+    }
+
+    public void setNoRuang(String noRuang) {
+        this.noRuang = noRuang;
+    }
+    
+    public int getNumOfPasienInap() {
+        return numOfPasienInap;
+    }
+
+    public PasienInap[] getDaftarPasien() {
+        return daftarPasien;
+    }
+  
+    public void setNumOfPasienInap(int numOfPasienInap) {
+        this.numOfPasienInap = numOfPasienInap;
+    }
+    
     
     
     public void tambahPasienInap(PasienInap pi) {
@@ -51,7 +86,13 @@ public class Ruangan {
 
     @Override
     public String toString() {
-        return "Ruangan{" + "daftarPasien=" + daftarPasien + ", noRuang=" + noRuang + '}';
+        String a = "";
+        for (int i = 0; i < numOfPasienInap; i++) {
+            a += this.daftarPasien[i].toString()+ "\n";
+        }
+        String ket = "noRuang = " + noRuang + '\n' + "daftarPasien = " 
+                + a;
+        return ket;
     }
 
     

@@ -10,27 +10,35 @@ package Model;
  * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
  */
 public class Pasien extends Orang {
-    private int idp;
+//    private int idp;
+    private String idp;
     private String g;
-    
 
-//    public Pasien(int idp, String nama) {
-//        super(nama);
+//    public Pasien(int idp, String nama, int vGelar, int umur) {
+//        super(nama, vGelar, umur);
+//        this.setGelar(vGelar);
+//        this.idp = idp;
+//    }
+//
+//    public int getIdp() {
+//        return idp;
+//    }
+//
+//    public void setIdp(int idp) {
 //        this.idp = idp;
 //    }
 
-
-    public Pasien(int idp, String nama, int vGelar, int umur) {
+    public Pasien(String idp, String nama, int vGelar, int umur) {
         super(nama, vGelar, umur);
         this.setGelar(vGelar);
         this.idp = idp;
     }
 
-    public int getIdp() {
+    public String getIdp() {
         return idp;
     }
 
-    public void setIdp(int idp) {
+    public void setIdp(String idp) {
         this.idp = idp;
     }
     
@@ -61,7 +69,11 @@ public class Pasien extends Orang {
 
     @Override
     public String toString() {
-        return "Pasien {" + "IDP =" + idp + ", Nama = " + g + ", Umur = " + umur + '}';
+        String IDP   = "IDP         : " + idp;
+        String nmPas = "Nama        : " + g;
+        String umPas = "Umur        : " + umur;
+        
+        return IDP + '\n' + nmPas + '\n' + umPas + '\n';
     }
     
     

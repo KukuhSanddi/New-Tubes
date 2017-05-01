@@ -5,16 +5,12 @@
  */
 package Driver;
 
-import Menu.Menu;
-
 /**
  *
  * @author Asus
  */
-public class DriverConsole {
+public class DriverGUI {
     public static void main(String[] args) {
-        Menu M = new Menu();
-        M.MainMenu();
-                
+        
     }
 }

@@ -31,32 +31,32 @@ public class FormAddPas extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        fieldNama = new javax.swing.JTextField();
+        labelIDP = new javax.swing.JLabel();
+        labelNama = new javax.swing.JLabel();
+        labelUmur = new javax.swing.JLabel();
+        labelGelar = new javax.swing.JLabel();
+        tfNama = new javax.swing.JTextField();
         BtnAddPasien = new javax.swing.JButton();
         BtnCAddPasien = new javax.swing.JButton();
         ComboBoxGelar = new javax.swing.JComboBox<>();
-        fieldIDP = new javax.swing.JTextField();
+        tfIDP = new javax.swing.JTextField();
         SpinnerUmur = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Tambah Pasien", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 0, 18))); // NOI18N
 
-        jLabel1.setText("IDP");
+        labelIDP.setText("IDP");
 
-        jLabel2.setText("Nama");
+        labelNama.setText("Nama");
 
-        jLabel3.setText("Umur");
+        labelUmur.setText("Umur");
 
-        jLabel4.setText("Gelar");
+        labelGelar.setText("Gelar");
 
         BtnAddPasien.setText("Tambah");
 
-        BtnCAddPasien.setText("Batal");
+        BtnCAddPasien.setText("Kembali");
 
         ComboBoxGelar.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Tuan", "Nyonya", "Nona" }));
         ComboBoxGelar.addActionListener(new java.awt.event.ActionListener() {
@@ -76,16 +76,16 @@ public class FormAddPas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel2)
-                            .addComponent(jLabel3)
-                            .addComponent(jLabel4)
-                            .addComponent(jLabel1))
+                            .addComponent(labelNama)
+                            .addComponent(labelUmur)
+                            .addComponent(labelGelar)
+                            .addComponent(labelIDP))
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(fieldNama)
+                                .addComponent(tfNama)
                                 .addComponent(ComboBoxGelar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(fieldIDP, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                                .addComponent(tfIDP, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
                             .addComponent(SpinnerUmur, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 61, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -99,20 +99,20 @@ public class FormAddPas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel1)
-                    .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelIDP)
+                    .addComponent(tfIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel2)
-                    .addComponent(fieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(labelNama)
+                    .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
+                    .addComponent(labelUmur)
                     .addComponent(SpinnerUmur, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(21, 21, 21)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jLabel4)
+                        .addComponent(labelGelar)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 71, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(BtnAddPasien)
@@ -147,20 +147,8 @@ public class FormAddPas extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_ComboBoxGelarActionPerformed
     
-    public int getComboBoxGelar(){
-        if((String)ComboBoxGelar.getSelectedItem() == "Tuan"){
-            return 1;
-        }
-        else if((String)ComboBoxGelar.getSelectedItem() == "Nyonya"){
-            return 2;
-        }
-        else if((String)ComboBoxGelar.getSelectedItem() == "Nona"){
-            return 3;
-        }
-        return 0;
-    }
-    
-    public void setActionListener(ActionListener a){
+
+    public void addActionListener(ActionListener a){
         BtnAddPasien.addActionListener(a);
         BtnCAddPasien.addActionListener(a);
     }
@@ -174,12 +162,12 @@ public class FormAddPas extends javax.swing.JFrame {
     }
     
     public String getfieldIDP(){
-        return fieldIDP.getText();
+        return tfIDP.getText();
         
     }
     
     public String getfieldNama(){
-        return fieldIDP.getText();
+        return tfIDP.getText();
         
     }
     
@@ -187,20 +175,30 @@ public class FormAddPas extends javax.swing.JFrame {
         return (int) SpinnerUmur.getValue();
     }
     
+    public int getComboBoxGelar(){
+        if((String)ComboBoxGelar.getSelectedItem() == "Tuan"){
+            return 1;
+        }
+        else if((String)ComboBoxGelar.getSelectedItem() == "Nyonya"){
+            return 2;
+        }
+        else if((String)ComboBoxGelar.getSelectedItem() == "Nona"){
+            return 3;
+        }
+        return 0;
+    }
     
-
-
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddPasien;
     private javax.swing.JButton BtnCAddPasien;
     private javax.swing.JComboBox<String> ComboBoxGelar;
     private javax.swing.JSpinner SpinnerUmur;
-    private javax.swing.JTextField fieldIDP;
-    private javax.swing.JTextField fieldNama;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JLabel labelGelar;
+    private javax.swing.JLabel labelIDP;
+    private javax.swing.JLabel labelNama;
+    private javax.swing.JLabel labelUmur;
+    private javax.swing.JTextField tfIDP;
+    private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }
