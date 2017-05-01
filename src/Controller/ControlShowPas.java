@@ -20,13 +20,12 @@ import javax.swing.JOptionPane;
  * @author Asus
  */
 public class ControlShowPas extends MouseAdapter implements ActionListener{
-    private ArrayList<Pasien> listPas;
     private FormShowPas view;
     private App model;
     
     public ControlShowPas(){
         model = new App();
-        listPas = new ArrayList();
+        model= new App();
         view = new FormShowPas();
         view.addActionListener(this);
         view.addMouseAdapter(this);
@@ -35,9 +34,9 @@ public class ControlShowPas extends MouseAdapter implements ActionListener{
     }
     
     private String[] getDaftarPasien(){
-        String[] dIDP = new String[listPas.size()];
+        String[] dIDP = new String[model.getListPas().size()];
         for (int i = 0; i < dIDP.length; i++) {
-            dIDP[i] = listPas.get(i).getIdp();
+            dIDP[i] = model.getListPas().get(i).getIdp();
         }
         return dIDP;
     }
@@ -60,12 +59,12 @@ public class ControlShowPas extends MouseAdapter implements ActionListener{
         }
         else if(source.equals(view.getBtnRemovePas())){
             int i = view.getSelectedPasien();
-            listPas.remove(i);
+            model.getListPas().remove(i);
             view.resetView();
             view.setDaftarPasien(getDaftarPasien());
         }
         else if(source.equals(view.getBtnRemoveAll())){
-            listPas.removeAll(listPas);
+            model.getListPas().removeAll(model.getListPas());
             view.resetView();
             view.setDaftarPasien(getDaftarPasien());
         }
@@ -83,7 +82,7 @@ public class ControlShowPas extends MouseAdapter implements ActionListener{
         Object source = me.getSource();
         if(source.equals(view.getListPas())){
             int i = view.getSelectedPasien();
-            Pasien p = listPas.get(i);
+            Pasien p = model.getListPas().get(i);
             view.setTextPasien(p.toString());
         }
     }

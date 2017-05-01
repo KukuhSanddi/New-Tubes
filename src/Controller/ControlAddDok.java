@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class ControlAddDok implements ActionListener {
     private App model;

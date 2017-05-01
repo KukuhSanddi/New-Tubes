@@ -13,7 +13,7 @@ import java.awt.event.MouseAdapter;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class ControlAddPasIn extends MouseAdapter implements ActionListener {
     private App model;
@@ -23,7 +23,16 @@ public class ControlAddPasIn extends MouseAdapter implements ActionListener {
         model = new App();
         view = new FormAddPasIn();
         view.addActionListener(this);
+        view.addMouseListener(this);
         view.setVisible(true); 
+    }
+    
+    private String[] getDaftarPasien(){
+        String[] dIDP = new String[model.getListPas().size()];
+        for (int i = 0; i < dIDP.length; i++) {
+            dIDP[i] = model.getListPas().get(i).getIdp();
+        }
+        return dIDP;
     }
 
     @Override
@@ -49,4 +58,5 @@ public class ControlAddPasIn extends MouseAdapter implements ActionListener {
         }
     }
     
+
 }

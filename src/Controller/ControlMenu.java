@@ -12,7 +12,7 @@ import java.awt.event.ActionListener;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class ControlMenu implements ActionListener{
     private App model;

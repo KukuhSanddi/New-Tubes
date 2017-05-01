@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda, Nisa Nurhardini
  */
 public class Pasien extends Orang {
 //    private int idp;

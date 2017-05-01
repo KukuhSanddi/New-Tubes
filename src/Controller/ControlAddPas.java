@@ -14,7 +14,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class ControlAddPas implements ActionListener{
     private App model;

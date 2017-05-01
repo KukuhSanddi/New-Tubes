@@ -9,7 +9,7 @@ import Menu.Menu;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class DriverConsole {
     public static void main(String[] args) {

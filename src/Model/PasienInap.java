@@ -10,7 +10,7 @@ import java.util.List;
 
 /**
  *
- * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda, Nisa Nurhardini
  */
 public class PasienInap {
     private Pasien pasien;

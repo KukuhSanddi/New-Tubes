@@ -5,65 +5,64 @@
  */
 package Controller;
 
-import GUI.FormShowDok;
+import GUI.FormShowRuangan;
 import Model.App;
-import Model.Dokter;
+import Model.Ruangan;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
-import java.util.ArrayList;
 import javax.swing.JOptionPane;
 
 /**
  *
- * @author Muhammad Rifky Putra Ananda
+ * @author Asus
  */
-public class ControlShowDok extends MouseAdapter implements ActionListener {
+public class ControlShowRuangan extends MouseAdapter implements ActionListener{
+    private FormShowRuangan view;
     private App model;
-    private FormShowDok view;
     
-    public ControlShowDok(){
+    public ControlShowRuangan(){
         model = new App();
-        view = new FormShowDok();
-        model = new App();
+        model= new App();
+        view = new FormShowRuangan();
         view.addActionListener(this);
         view.addMouseAdapter(this);
-        view.setList(getDaftarDokter());
+        view.setVisible(true);
     }
     
-    private String[] getDaftarDokter(){
-        String[] dNIP = new String[model.getListDok().size()];
-        for (int i = 0; i < dNIP.length; i++) {
-            dNIP[i] = model.getListDok().get(i).getNip();
+    private String[] getDaftarRuang(){
+        String[] dNoR = new String[model.getListRuang().size()];
+        for (int i = 0; i < dNoR.length; i++) {
+            dNoR[] = model.getListRuang().get(i).getNoRuang();
         }
-        return dNIP;
+        return dNoR;
     }
 
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        if(source.equals(view.getBtnCariNIP())){
-            for(Dokter d : model.getListDok()){
-                if(d.getNip().equals(view.getfieldNIP())){
-                    view.setTextDokter(d.toString());
+        if(source.equals(view.getBtnCariNoRuang())){
+            for(Ruangan r : model.getListRuang()){
+                if(r.getNoRuang().equals(view.getfieldNoRuang())){
+                    view.setTextRuang(r.toString());
                 }
             }
         }
         else if(source.equals(view.getBtnShowAll())){
-            for(Dokter d : model.getListDok()){
-                view.setTextDokter(d.toString());
+            for(Ruangan r : model.getListRuang()){
+                view.setTextRuang(r.toString());
             }
         }
-        else if(source.equals(view.getBtnRemoveDok())){
-            int i = view.getSelectedDok();
-            model.getListDok().remove(i);
+        else if(source.equals(view.getBtnRemoveRuang())){
+            int i = view.getSelectedRuang();
+            model.getListRuang().remove(i);
             view.resetView();
-            view.setDaftarDokter(getDaftarDokter());
+            view.setDaftarRuang(getDaftarRuang());
         }
         else if(source.equals(view.getBtnRemoveAll())){
-            model.getListDok().removeAll(model.getListDok());
+            model.getListRuang().removeAll(model.getListRuang());
             view.resetView();
-            view.setDaftarDokter(getDaftarDokter());
+            view.setDaftarRuang(getDaftarRuang());
         }
         
         else if(source.equals(view.getBtnKembali())){

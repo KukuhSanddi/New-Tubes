@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import javax.swing.JButton;
+import javax.swing.JList;
+
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormShowRuangan extends javax.swing.JFrame {
 
@@ -28,18 +33,17 @@ public class FormShowRuangan extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        jTextField1 = new javax.swing.JTextField();
+        fieldNoRuang = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
-        jButton1 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
+        BtnKembali = new javax.swing.JButton();
+        BtnCariNoRuang = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        listRuang = new javax.swing.JList<>();
+        BtnShowAll = new javax.swing.JButton();
+        BtnRemoveAll = new javax.swing.JButton();
+        BtnRemoveRuangan = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAreaRuangan = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,28 +51,26 @@ public class FormShowRuangan extends javax.swing.JFrame {
 
         jLabel1.setText("No. Ruang");
 
-        jButton1.setText("Selesai");
+        BtnKembali.setText("Kembali");
 
-        jButton2.setText("Kembali");
+        BtnCariNoRuang.setText("Cari");
 
-        jButton3.setText("Cari");
-
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listRuang.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listRuang);
 
-        jButton4.setText("Tampilkan Semua");
+        BtnShowAll.setText("Tampilkan Semua");
 
-        jButton5.setText("Hapus Semua");
+        BtnRemoveAll.setText("Hapus Semua");
 
-        jButton6.setText("Hapus");
+        BtnRemoveRuangan.setText("Hapus");
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        textAreaRuangan.setColumns(20);
+        textAreaRuangan.setRows(5);
+        jScrollPane2.setViewportView(textAreaRuangan);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,23 +82,22 @@ public class FormShowRuangan extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(18, 18, 18)
-                        .addComponent(jTextField1)
+                        .addComponent(fieldNoRuang)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnCariNoRuang, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton1))
+                        .addComponent(BtnKembali)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BtnShowAll, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton6, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
+                                .addComponent(BtnRemoveRuangan, javax.swing.GroupLayout.DEFAULT_SIZE, 115, Short.MAX_VALUE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton5, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(BtnRemoveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2))))
                 .addContainerGap())
         );
@@ -105,22 +106,20 @@ public class FormShowRuangan extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldNoRuang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1)
-                    .addComponent(jButton3))
+                    .addComponent(BtnCariNoRuang))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton4)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                    .addComponent(BtnShowAll)
+                    .addComponent(BtnRemoveAll)
+                    .addComponent(BtnRemoveRuangan))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 36, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1)
-                    .addComponent(jButton2))
+                .addComponent(BtnKembali)
                 .addContainerGap())
         );
 
@@ -144,54 +143,90 @@ public class FormShowRuangan extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormShowRuangan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormShowRuangan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormShowRuangan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormShowRuangan.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+   public void addActionListener(ActionListener a){
+        BtnCariNoRuang.addActionListener(a);
+        BtnShowAll.addActionListener(a);
+        BtnRemoveAll.addActionListener(a);
+        BtnKembali.addActionListener(a);
+        BtnRemoveRuangan.addActionListener(a);
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormShowRuangan().setVisible(true);
-            }
-        });
+    }
+   
+    public void addMouseAdapter(MouseAdapter m){
+        listRuang.addMouseListener(m);
+    }
+    
+    //list dan text area
+    public int getSelectedRuang(){
+        return listRuang.getSelectedIndex();
+    }
+    
+    public void setDaftarRuang(String[] dNoR){
+        listRuang.setListData(dNoR);
+    }
+    
+    public void setTextRuang(String s){
+        textAreaRuangan.setText(s);
+    }
+    
+    public void setList(String[] s){
+        listRuang.setListData(s);
+    }
+    
+    
+    //get
+    public String getfieldNoRuang(){
+        return fieldNoRuang.getText();
+    }
+    
+    //button
+    public JButton getBtnCariNoRuang() {
+        return BtnCariNoRuang;
+    }
+
+    public JButton getBtnRemoveRuang() {
+        return BtnRemoveRuangan;
+    }
+
+    public JButton getBtnKembali() {
+        return BtnKembali;
+    }
+
+    public JButton getBtnRemoveAll() {
+        return BtnRemoveAll;
+    }
+
+//    public JButton getBtnSelesai() {
+//        return BtnSelesai;
+//    }
+
+    public JButton getBtnShowAll() {
+        return BtnShowAll;
+    }
+    
+    //list
+    public JList getListRuang() {
+        return listRuang;
+    }
+
+    public void resetView(){
+        fieldNoRuang.setText("");
+        listRuang.clearSelection();
+        textAreaRuangan.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton BtnCariNoRuang;
+    private javax.swing.JButton BtnKembali;
+    private javax.swing.JButton BtnRemoveAll;
+    private javax.swing.JButton BtnRemoveRuangan;
+    private javax.swing.JButton BtnShowAll;
+    private javax.swing.JTextField fieldNoRuang;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JList<String> listRuang;
+    private javax.swing.JTextArea textAreaRuangan;
     // End of variables declaration//GEN-END:variables
 }

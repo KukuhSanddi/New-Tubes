@@ -13,7 +13,7 @@ import javax.swing.JList;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormShowPas extends javax.swing.JFrame {
 

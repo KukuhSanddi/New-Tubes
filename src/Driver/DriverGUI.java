@@ -12,7 +12,7 @@ import Model.App;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class DriverGUI {
     public static void main(String[] args) {

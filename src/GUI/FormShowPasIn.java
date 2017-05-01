@@ -5,9 +5,14 @@
  */
 package GUI;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseAdapter;
+import javax.swing.JButton;
+import javax.swing.JList;
+
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormShowPasIn extends javax.swing.JFrame {
 
@@ -29,17 +34,16 @@ public class FormShowPasIn extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        jButton1 = new javax.swing.JButton();
+        fieldIDP = new javax.swing.JTextField();
+        BtnCariIDP = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
-        jButton2 = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
-        jButton6 = new javax.swing.JButton();
+        listPas = new javax.swing.JList<>();
+        BtnShowAll = new javax.swing.JButton();
+        BtnRemovePasIn = new javax.swing.JButton();
+        BtnRemoveAll = new javax.swing.JButton();
+        BtnKembali = new javax.swing.JButton();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAreaPas = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,28 +51,26 @@ public class FormShowPasIn extends javax.swing.JFrame {
 
         jLabel1.setText("IDP");
 
-        jButton1.setText("Cari");
+        BtnCariIDP.setText("Cari");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listPas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listPas);
 
-        jButton2.setText("Tampilkan Semua");
+        BtnShowAll.setText("Tampilkan Semua");
 
-        jButton3.setText("Hapus");
+        BtnRemovePasIn.setText("Hapus");
 
-        jButton4.setText("Hapus Semua");
+        BtnRemoveAll.setText("Hapus Semua");
 
-        jButton5.setText("Selesai");
+        BtnKembali.setText("Kembali");
 
-        jButton6.setText("Kembali");
-
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        textAreaPas.setColumns(20);
+        textAreaPas.setRows(5);
+        jScrollPane2.setViewportView(textAreaPas);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -80,25 +82,24 @@ public class FormShowPasIn extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, 211, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnCariIDP, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton6)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton5))
+                        .addComponent(BtnKembali)
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
-                                .addComponent(jButton2)))
+                                .addComponent(BtnShowAll)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BtnRemovePasIn, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(BtnRemoveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane2))))
                 .addContainerGap())
         );
@@ -109,21 +110,19 @@ public class FormShowPasIn extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jLabel1)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jButton1))
+                        .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(BtnCariIDP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton3)
-                    .addComponent(jButton4))
+                    .addComponent(BtnShowAll)
+                    .addComponent(BtnRemovePasIn)
+                    .addComponent(BtnRemoveAll))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton6))
+                .addComponent(BtnKembali)
                 .addContainerGap())
         );
 
@@ -147,54 +146,84 @@ public class FormShowPasIn extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    /**
-     * @param args the command line arguments
-     */
-    public static void main(String args[]) {
-        /* Set the Nimbus look and feel */
-        //<editor-fold defaultstate="collapsed" desc=" Look and feel setting code (optional) ">
-        /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
-         * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
-         */
-        try {
-            for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
-                if ("Nimbus".equals(info.getName())) {
-                    javax.swing.UIManager.setLookAndFeel(info.getClassName());
-                    break;
-                }
-            }
-        } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(FormShowPasIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(FormShowPasIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(FormShowPasIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(FormShowPasIn.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
-        }
-        //</editor-fold>
+    public void addActionListener(ActionListener a){
+        BtnCariIDP.addActionListener(a);
+        BtnShowAll.addActionListener(a);
+        BtnRemoveAll.addActionListener(a);
+        BtnKembali.addActionListener(a);
+    }
+   
+    public void addMouseAdapter(MouseAdapter m){
+        listPas.addMouseListener(m);
+    }
+    
+    //list dan text area
+    public int getSelectedPasien(){
+        return listPas.getSelectedIndex();
+    }
+    
+    public void setDaftarPasien(String[] dIDP){
+        listPas.setListData(dIDP);
+    }
+    
+    public void setTextPasien(String s){
+        textAreaPas.setText(s);
+    }
+    
+    public void setList(String[] s){
+        listPas.setListData(s);
+    }
+    
+    
+    //get
+    public String getfieldIDP(){
+        return fieldIDP.getText();
+    }
+    
+    //button
+    public JButton getBtnCariIDP() {
+        return BtnCariIDP;
+    }
 
-        /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                new FormShowPasIn().setVisible(true);
-            }
-        });
+    public JButton getBtnRemovePasIn() {
+        return BtnRemovePasIn;
+    }
+
+    public JButton getBtnKembali() {
+        return BtnKembali;
+    }
+
+    public JButton getBtnRemoveAll() {
+        return BtnRemoveAll;
+    }
+
+    public JButton getBtnShowAll() {
+        return BtnShowAll;
+    }
+    
+    //list
+    public JList getListPas() {
+        return listPas;
+    }
+
+    public void resetView(){
+        fieldIDP.setText("");
+        listPas.clearSelection();
+        textAreaPas.setText("");
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
-    private javax.swing.JButton jButton6;
+    private javax.swing.JButton BtnCariIDP;
+    private javax.swing.JButton BtnKembali;
+    private javax.swing.JButton BtnRemoveAll;
+    private javax.swing.JButton BtnRemovePasIn;
+    private javax.swing.JButton BtnShowAll;
+    private javax.swing.JTextField fieldIDP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JList<String> listPas;
+    private javax.swing.JTextArea textAreaPas;
     // End of variables declaration//GEN-END:variables
 }

@@ -7,7 +7,7 @@ package Model;
 
 /**
  *
- * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda, Nisa Nurhardini
  */
 public abstract class Orang {
     

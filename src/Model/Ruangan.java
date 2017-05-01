@@ -9,7 +9,7 @@ import java.util.ArrayList;
 
 /**
  *
- * @author Kukuh Sanddi
+ * @author Kukuh Sanddi, Muhammad Rifky Putra Ananda, Nisa Nurhardini
  */
 public class Ruangan {
     private PasienInap daftarPasien[];

@@ -10,7 +10,7 @@ import javax.swing.JButton;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormAddPas extends javax.swing.JFrame {
 

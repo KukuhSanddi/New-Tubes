@@ -14,7 +14,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormAddPasIn extends javax.swing.JFrame {
 

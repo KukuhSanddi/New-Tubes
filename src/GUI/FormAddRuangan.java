@@ -11,7 +11,7 @@ import javax.swing.JTextField;
 
 /**
  *
- * @author Asus
+ * @author Muhammad Rifky Putra Ananda
  */
 public class FormAddRuangan extends javax.swing.JFrame {
 
@@ -32,7 +32,7 @@ public class FormAddRuangan extends javax.swing.JFrame {
     private void initComponents() {
 
         jPanel1 = new javax.swing.JPanel();
-        filedNoRuang = new javax.swing.JTextField();
+        fieldNoRuang = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         BtnTambah = new javax.swing.JButton();
         BtnKembali = new javax.swing.JButton();
@@ -57,7 +57,7 @@ public class FormAddRuangan extends javax.swing.JFrame {
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(58, 58, 58)
-                        .addComponent(filedNoRuang))
+                        .addComponent(fieldNoRuang))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(BtnKembali)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 208, Short.MAX_VALUE)
@@ -69,7 +69,7 @@ public class FormAddRuangan extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(filedNoRuang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(fieldNoRuang, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel1))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 28, Short.MAX_VALUE)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -111,14 +111,14 @@ public class FormAddRuangan extends javax.swing.JFrame {
         return BtnTambah;
     }
 
-    public String getFiledNoRuang() {
-        return filedNoRuang.getText();
+    public String getFieldNoRuang() {
+        return fieldNoRuang.getText();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnKembali;
     private javax.swing.JButton BtnTambah;
-    private javax.swing.JTextField filedNoRuang;
+    private javax.swing.JTextField fieldNoRuang;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     // End of variables declaration//GEN-END:variables
