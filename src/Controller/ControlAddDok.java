@@ -31,7 +31,7 @@ public class ControlAddDok implements ActionListener {
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
         if(source.equals(view.getBtnAddDok())){
-            String nip = view.getfNIP();
+            String nip = view.getfieldNIP();
             String nm = view.getName();
             int umur = view.getSpinnerUmur();
             int gelar = view.getComboBoxGelar();

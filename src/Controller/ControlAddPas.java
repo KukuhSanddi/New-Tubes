@@ -18,7 +18,7 @@ import java.util.ArrayList;
  */
 public class ControlAddPas implements ActionListener{
     private App model;
-    private ArrayList<Pasien> listPas;
+//    private ArrayList<Pasien> listPas;
     private FormAddPas view;
     
     public ControlAddPas(App model){
@@ -38,7 +38,7 @@ public class ControlAddPas implements ActionListener{
             int gelar = view.getComboBoxGelar();
             
             Pasien p = new Pasien(idp, nm, gelar, umur);
-            listPas.add(p);
+            model.addPas(p);
         }
         else if(source.equals(view.getBtnCAddPasien())){
             new ControlMenu();

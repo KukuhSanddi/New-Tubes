@@ -35,11 +35,11 @@ public class FormAddPas extends javax.swing.JFrame {
         labelNama = new javax.swing.JLabel();
         labelUmur = new javax.swing.JLabel();
         labelGelar = new javax.swing.JLabel();
-        tfNama = new javax.swing.JTextField();
+        fieldNama = new javax.swing.JTextField();
         BtnAddPasien = new javax.swing.JButton();
         BtnCAddPasien = new javax.swing.JButton();
         ComboBoxGelar = new javax.swing.JComboBox<>();
-        tfIDP = new javax.swing.JTextField();
+        fieldIDP = new javax.swing.JTextField();
         SpinnerUmur = new javax.swing.JSpinner();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -83,9 +83,9 @@ public class FormAddPas extends javax.swing.JFrame {
                         .addGap(26, 26, 26)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(tfNama)
+                                .addComponent(fieldNama)
                                 .addComponent(ComboBoxGelar, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfIDP, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
+                                .addComponent(fieldIDP, javax.swing.GroupLayout.DEFAULT_SIZE, 234, Short.MAX_VALUE))
                             .addComponent(SpinnerUmur, javax.swing.GroupLayout.PREFERRED_SIZE, 64, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 61, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
@@ -100,11 +100,11 @@ public class FormAddPas extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelIDP)
-                    .addComponent(tfIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNama)
-                    .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUmur)
@@ -162,12 +162,12 @@ public class FormAddPas extends javax.swing.JFrame {
     }
     
     public String getfieldIDP(){
-        return tfIDP.getText();
+        return fieldIDP.getText();
         
     }
     
     public String getfieldNama(){
-        return tfIDP.getText();
+        return fieldIDP.getText();
         
     }
     
@@ -188,17 +188,25 @@ public class FormAddPas extends javax.swing.JFrame {
         return 0;
     }
     
+    //reset
+    public void resetView(){
+        fieldIDP.setText("");
+        fieldNama.setText("");
+        SpinnerUmur.setValue(this);
+        ComboBoxGelar.setSelectedIndex(0);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnAddPasien;
     private javax.swing.JButton BtnCAddPasien;
     private javax.swing.JComboBox<String> ComboBoxGelar;
     private javax.swing.JSpinner SpinnerUmur;
+    private javax.swing.JTextField fieldIDP;
+    private javax.swing.JTextField fieldNama;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JLabel labelGelar;
     private javax.swing.JLabel labelIDP;
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelUmur;
-    private javax.swing.JTextField tfIDP;
-    private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }

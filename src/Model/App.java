@@ -22,12 +22,6 @@ public class App {
         listRuang = new ArrayList();
     }
     
-    public void load(ArrayList<Pasien> listPas, ArrayList<Dokter> listDok, ArrayList<Ruangan> listRuang){
-        this.listPas = listPas;
-        this.listDok = listDok;
-        this.listRuang = listRuang;
-    }
-    
     //add per object
     
     public void addPas(Pasien p){

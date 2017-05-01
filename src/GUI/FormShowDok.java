@@ -5,6 +5,13 @@
  */
 package GUI;
 
+import java.awt.event.ActionListener;
+import java.awt.event.MouseListener;
+import javax.swing.JButton;
+import javax.swing.JList;
+import javax.swing.JTextArea;
+import javax.swing.JTextField;
+
 /**
  *
  * @author Asus
@@ -29,17 +36,16 @@ public class FormShowDok extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        jTextField1 = new javax.swing.JTextField();
-        BtnCari = new javax.swing.JButton();
-        jButton3 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        jButton4 = new javax.swing.JButton();
-        jButton1 = new javax.swing.JButton();
-        jButton5 = new javax.swing.JButton();
+        fieldNIP = new javax.swing.JTextField();
+        BtnCariNIP = new javax.swing.JButton();
+        BtnShowAll = new javax.swing.JButton();
+        BtnRemoveDok = new javax.swing.JButton();
+        BtnRemoveAll = new javax.swing.JButton();
+        BtnKembali = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jList1 = new javax.swing.JList<>();
+        listDok = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        textAreaDok = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -47,33 +53,31 @@ public class FormShowDok extends javax.swing.JFrame {
 
         jLabel1.setText("NIP");
 
-        BtnCari.setText("Cari");
+        BtnCariNIP.setText("Cari");
 
-        jButton3.setText("Selesai");
-
-        jButton2.setText("Tampilkan Semua");
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
+        BtnShowAll.setText("Tampilkan Semua");
+        BtnShowAll.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+                BtnShowAllActionPerformed(evt);
             }
         });
 
-        jButton4.setText("Hapus");
+        BtnRemoveDok.setText("Hapus");
 
-        jButton1.setText("Hapus Semua");
+        BtnRemoveAll.setText("Hapus Semua");
 
-        jButton5.setText("Kembali");
+        BtnKembali.setText("Kembali");
 
-        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+        listDok.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
             public int getSize() { return strings.length; }
             public String getElementAt(int i) { return strings[i]; }
         });
-        jScrollPane1.setViewportView(jList1);
+        jScrollPane1.setViewportView(listDok);
 
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane2.setViewportView(jTextArea1);
+        textAreaDok.setColumns(20);
+        textAreaDok.setRows(5);
+        jScrollPane2.setViewportView(textAreaDok);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -82,30 +86,27 @@ public class FormShowDok extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton5)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton3))
+                    .addComponent(BtnKembali)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel1)
                         .addGap(50, 50, 50)
-                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(fieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 212, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(BtnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(BtnCariNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                             .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jButton2, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(BtnShowAll, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(BtnRemoveDok, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(BtnRemoveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jScrollPane2)
                                 .addGap(2, 2, 2)))))
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -113,21 +114,19 @@ public class FormShowDok extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnCari))
+                    .addComponent(fieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(BtnCariNIP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addComponent(jScrollPane2))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton4)
-                    .addComponent(jButton1))
+                    .addComponent(BtnShowAll)
+                    .addComponent(BtnRemoveDok)
+                    .addComponent(BtnRemoveAll))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton3)
-                    .addComponent(jButton5))
+                .addComponent(BtnKembali)
                 .addContainerGap())
         );
 
@@ -151,25 +150,103 @@ public class FormShowDok extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void BtnShowAllActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnShowAllActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_BtnShowAllActionPerformed
 
+    public void addActionListener(ActionListener a){
+        BtnCariNIP.addActionListener(a);
+        BtnShowAll.addActionListener(a);
+        BtnRemoveDok.addActionListener(a);
+        BtnRemoveAll.addActionListener(a);
+//        BtnSelesai.addActionListener(a);
+        BtnKembali.addActionListener(a);
+    }
+    
+    public void addMouseAdapter(MouseListener m){
+        listDok.addMouseListener(m);
+    }
+    
+    //get untuk list dan text area
+    public int getSelectedDok(){
+        return listDok.getSelectedIndex();
+    }
+    
+    public void setDaftarDokter(String[] dNIP){
+        listDok.setListData(dNIP);
+    }
+    
+    public void setTextDokter(String s){
+        textAreaDok.setText(s);
+    }
+    
+    public String getfieldNIP(){
+        return fieldNIP.getText();
+    }
+    
+    //button
+    public JButton getBtnCariNIP() {
+        return BtnCariNIP;
+    }
+
+    public JButton getBtnKembali() {
+        return BtnKembali;
+    }
+
+    public JButton getBtnRemoveAll() {
+        return BtnRemoveAll;
+    }
+
+    public JButton getBtnRemoveDok() {
+        return BtnRemoveDok;
+    }
+
+//    public JButton getBtnSelesai() {
+//        return BtnSelesai;
+//    }
+
+    public JButton getBtnShowAll() {
+        return BtnShowAll;
+    }
+    
+    //field
+    public JTextField getFieldNIP() {
+        return fieldNIP;
+    }
+    
+    //list
+    public JList<String> getListDok() {
+        return listDok;
+    }
+
+    public JTextArea getTextAreaDok() {
+        return textAreaDok;
+    }
+    
+    public void setList(String[] s){
+        listDok.setListData(s);
+    }
+    
+    //reset
+    public void resetView(){
+        fieldNIP.setText("");
+        listDok.clearSelection();
+        textAreaDok.setText("");
+    }
     
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnCari;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JButton jButton4;
-    private javax.swing.JButton jButton5;
+    private javax.swing.JButton BtnCariNIP;
+    private javax.swing.JButton BtnKembali;
+    private javax.swing.JButton BtnRemoveAll;
+    private javax.swing.JButton BtnRemoveDok;
+    private javax.swing.JButton BtnShowAll;
+    private javax.swing.JTextField fieldNIP;
     private javax.swing.JLabel jLabel1;
-    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTextArea jTextArea1;
-    private javax.swing.JTextField jTextField1;
+    private javax.swing.JList<String> listDok;
+    private javax.swing.JTextArea textAreaDok;
     // End of variables declaration//GEN-END:variables
 }

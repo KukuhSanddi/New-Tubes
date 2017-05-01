@@ -15,10 +15,12 @@ import java.awt.event.ActionListener;
  * @author Asus
  */
 public class ControlMenu implements ActionListener{
-    private FormMenu view;
     private App model;
+    private FormMenu view;
+    
     
     public ControlMenu(){
+        model = new App();
         view = new FormMenu();
         view.addActionListener(this);
         view.setVisible(true);
@@ -37,7 +39,8 @@ public class ControlMenu implements ActionListener{
             view.dispose();
         }
         else if(click.equals(view.getBtnAddPasIn())){
-            
+            new ControlAddPasIn(model);
+            view.dispose();
         }
         else if(click.equals(view.getBtnAddRg())){
             

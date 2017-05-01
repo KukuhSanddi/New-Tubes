@@ -13,6 +13,7 @@ import java.awt.event.ActionListener;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
 import java.util.ArrayList;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -30,6 +31,7 @@ public class ControlShowPas extends MouseAdapter implements ActionListener{
         view.addActionListener(this);
         view.addMouseAdapter(this);
         view.setVisible(true);
+        view.setList(getDaftarPasien());
     }
     
     private String[] getDaftarPasien(){
@@ -43,23 +45,36 @@ public class ControlShowPas extends MouseAdapter implements ActionListener{
     @Override
     public void actionPerformed(ActionEvent ae) {
         Object source = ae.getSource();
-        if(source.equals(view.getBtnCari())){
-            
+        if(source.equals(view.getBtnCariIDP())){
+            for(Pasien p : model.getListPas()){
+                if(p.getIdp().equals(view.getfieldIDP())){
+                    view.setTextPasien(p.toString());
+                }
+                
+            }
         }
         else if(source.equals(view.getBtnShowAll())){
-            
+            for(Pasien p : model.getListPas()){
+                view.setTextPasien(p.toString());
+            }
         }
         else if(source.equals(view.getBtnRemovePas())){
-            
+            int i = view.getSelectedPasien();
+            listPas.remove(i);
+            view.resetView();
+            view.setDaftarPasien(getDaftarPasien());
         }
         else if(source.equals(view.getBtnRemoveAll())){
-            
-        }
-        else if(source.equals(view.getBtnSelesai())){
-            
+            listPas.removeAll(listPas);
+            view.resetView();
+            view.setDaftarPasien(getDaftarPasien());
         }
         else if(source.equals(view.getBtnKembali())){
+            JOptionPane.showConfirmDialog(view, source, "Sesi Lihat Pasien selesai", 
+                    JOptionPane.OK_OPTION,JOptionPane.INFORMATION_MESSAGE);
             
+            new ControlMenu();
+            view.dispose();
         }
     }
     

@@ -37,11 +37,10 @@ public class FormShowPas extends javax.swing.JFrame {
         jLabel1 = new javax.swing.JLabel();
         fieldIDP = new javax.swing.JTextField();
         BtnKembali = new javax.swing.JButton();
-        BtnCari = new javax.swing.JButton();
+        BtnCariIDP = new javax.swing.JButton();
         BtnShowAll = new javax.swing.JButton();
         BtnRemovePas = new javax.swing.JButton();
         BtnRemoveAll = new javax.swing.JButton();
-        BtnSelesai = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         listPas = new javax.swing.JList<>();
         jScrollPane2 = new javax.swing.JScrollPane();
@@ -61,15 +60,13 @@ public class FormShowPas extends javax.swing.JFrame {
 
         BtnKembali.setText("Kembali");
 
-        BtnCari.setText("Cari");
+        BtnCariIDP.setText("Cari");
 
         BtnShowAll.setText("Tampilkan Semua");
 
         BtnRemovePas.setText("Hapus");
 
         BtnRemoveAll.setText("Hapus Semua");
-
-        BtnSelesai.setText("Selesai");
 
         listPas.setModel(new javax.swing.AbstractListModel<String>() {
             String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
@@ -89,31 +86,26 @@ public class FormShowPas extends javax.swing.JFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel1)
-                                .addGap(49, 49, 49)
-                                .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(BtnCari, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(BtnShowAll, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addGroup(jPanel1Layout.createSequentialGroup()
-                                        .addComponent(BtnRemovePas, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(BtnRemoveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(0, 0, Short.MAX_VALUE))
-                                    .addComponent(jScrollPane2))))
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(BtnKembali)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(BtnSelesai)))
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addComponent(jLabel1)
+                            .addGap(49, 49, 49)
+                            .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, 213, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addComponent(BtnCariIDP, javax.swing.GroupLayout.PREFERRED_SIZE, 63, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(BtnShowAll, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addComponent(BtnRemovePas, javax.swing.GroupLayout.PREFERRED_SIZE, 112, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                    .addComponent(BtnRemoveAll, javax.swing.GroupLayout.PREFERRED_SIZE, 109, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addGap(0, 0, Short.MAX_VALUE))
+                                .addComponent(jScrollPane2))))
+                    .addComponent(BtnKembali))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
@@ -123,7 +115,7 @@ public class FormShowPas extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1)
                     .addComponent(fieldIDP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(BtnCari))
+                    .addComponent(BtnCariIDP))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
@@ -134,9 +126,7 @@ public class FormShowPas extends javax.swing.JFrame {
                     .addComponent(BtnRemovePas)
                     .addComponent(BtnRemoveAll))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 38, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(BtnKembali)
-                    .addComponent(BtnSelesai))
+                .addComponent(BtnKembali)
                 .addContainerGap())
         );
 
@@ -165,18 +155,19 @@ public class FormShowPas extends javax.swing.JFrame {
     }//GEN-LAST:event_fieldIDPActionPerformed
 
     public void addActionListener(ActionListener a){
-        BtnCari.addActionListener(a);
+        BtnCariIDP.addActionListener(a);
         BtnShowAll.addActionListener(a);
         BtnRemoveAll.addActionListener(a);
         BtnKembali.addActionListener(a);
         BtnRemovePas.addActionListener(a);
+//        BtnSelesai.addActionListener(a);
     }
    
     public void addMouseAdapter(MouseAdapter m){
         listPas.addMouseListener(m);
     }
     
-    //
+    //list dan text area
     public int getSelectedPasien(){
         return listPas.getSelectedIndex();
     }
@@ -189,14 +180,19 @@ public class FormShowPas extends javax.swing.JFrame {
         textAreaPas.setText(s);
     }
     
+    public void setList(String[] s){
+        listPas.setListData(s);
+    }
     
-    //
-    public String getIdp(){
+    
+    //get
+    public String getfieldIDP(){
         return fieldIDP.getText();
     }
-
-    public JButton getBtnCari() {
-        return BtnCari;
+    
+    //button
+    public JButton getBtnCariIDP() {
+        return BtnCariIDP;
     }
 
     public JButton getBtnRemovePas() {
@@ -211,24 +207,30 @@ public class FormShowPas extends javax.swing.JFrame {
         return BtnRemoveAll;
     }
 
-    public JButton getBtnSelesai() {
-        return BtnSelesai;
-    }
+//    public JButton getBtnSelesai() {
+//        return BtnSelesai;
+//    }
 
     public JButton getBtnShowAll() {
         return BtnShowAll;
     }
-
+    
+    //list
     public JList getListPas() {
         return listPas;
     }
+
+    public void resetView(){
+        fieldIDP.setText("");
+        listPas.clearSelection();
+        textAreaPas.setText("");
+    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton BtnCari;
+    private javax.swing.JButton BtnCariIDP;
     private javax.swing.JButton BtnKembali;
     private javax.swing.JButton BtnRemoveAll;
     private javax.swing.JButton BtnRemovePas;
-    private javax.swing.JButton BtnSelesai;
     private javax.swing.JButton BtnShowAll;
     private javax.swing.JTextField fieldIDP;
     private javax.swing.JLabel jLabel1;

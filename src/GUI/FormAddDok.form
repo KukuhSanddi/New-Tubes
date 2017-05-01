@@ -95,8 +95,8 @@
                           <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="1" attributes="0">
-                                  <Component id="tfNIP" min="-2" pref="234" max="-2" attributes="0"/>
-                                  <Component id="tfNama" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
+                                  <Component id="fieldNIP" min="-2" pref="234" max="-2" attributes="0"/>
+                                  <Component id="fieldNama" alignment="0" min="-2" pref="234" max="-2" attributes="0"/>
                                   <Component id="SpinnerUmur" alignment="0" min="-2" pref="76" max="-2" attributes="0"/>
                               </Group>
                               <Component id="ComboBoxGelar" min="-2" pref="151" max="-2" attributes="0"/>
@@ -119,12 +119,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNIP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfNIP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldNIP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNama" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfNama" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldNama" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -174,12 +174,12 @@
             </Property>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfNIP">
+        <Component class="javax.swing.JTextField" name="fieldNIP">
           <Events>
-            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="tfNIPActionPerformed"/>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="fieldNIPActionPerformed"/>
           </Events>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfNama">
+        <Component class="javax.swing.JTextField" name="fieldNama">
         </Component>
         <Component class="javax.swing.JComboBox" name="ComboBoxGelar">
           <Properties>

@@ -107,26 +107,13 @@ public class FormAddRuangan extends javax.swing.JFrame {
         return BtnKembali;
     }
 
-    public void setBtnKembali(JButton BtnKembali) {
-        this.BtnKembali = BtnKembali;
-    }
-
     public JButton getBtnTambah() {
         return BtnTambah;
     }
 
-    public void setBtnTambah(JButton BtnTambah) {
-        this.BtnTambah = BtnTambah;
+    public String getFiledNoRuang() {
+        return filedNoRuang.getText();
     }
-
-    public JTextField getFiledNoRuang() {
-        return filedNoRuang;
-    }
-
-    public void setFiledNoRuang(JTextField filedNoRuang) {
-        this.filedNoRuang = filedNoRuang;
-    }
-    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton BtnKembali;

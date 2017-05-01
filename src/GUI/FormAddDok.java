@@ -38,8 +38,8 @@ public class FormAddDok extends javax.swing.JFrame {
         labelUmur = new javax.swing.JLabel();
         labelGelar = new javax.swing.JLabel();
         SpinnerUmur = new javax.swing.JSpinner();
-        tfNIP = new javax.swing.JTextField();
-        tfNama = new javax.swing.JTextField();
+        fieldNIP = new javax.swing.JTextField();
+        fieldNama = new javax.swing.JTextField();
         ComboBoxGelar = new javax.swing.JComboBox<>();
         btnAddDok = new javax.swing.JButton();
         btnCAddDok = new javax.swing.JButton();
@@ -65,9 +65,9 @@ public class FormAddDok extends javax.swing.JFrame {
 
         SpinnerUmur.setModel(new javax.swing.SpinnerNumberModel(0, 0, 100, 1));
 
-        tfNIP.addActionListener(new java.awt.event.ActionListener() {
+        fieldNIP.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tfNIPActionPerformed(evt);
+                fieldNIPActionPerformed(evt);
             }
         });
 
@@ -103,8 +103,8 @@ public class FormAddDok extends javax.swing.JFrame {
                         .addGap(24, 24, 24)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                .addComponent(tfNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(tfNama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(fieldNama, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 234, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addComponent(SpinnerUmur, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(ComboBoxGelar, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(0, 63, Short.MAX_VALUE))
@@ -120,11 +120,11 @@ public class FormAddDok extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNIP)
-                    .addComponent(tfNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldNIP, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelNama)
-                    .addComponent(tfNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(fieldNama, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(labelUmur)
@@ -168,15 +168,16 @@ public class FormAddDok extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_btnCAddDokActionPerformed
 
-    private void tfNIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tfNIPActionPerformed
+    private void fieldNIPActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_fieldNIPActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_tfNIPActionPerformed
+    }//GEN-LAST:event_fieldNIPActionPerformed
 
     public void addActionListener(ActionListener a){
         btnAddDok.addActionListener(a);
         btnCAddDok.addActionListener(a);
     }
     
+    //button
     public JButton getBtnAddDok(){
         return btnAddDok;
     }
@@ -185,12 +186,13 @@ public class FormAddDok extends javax.swing.JFrame {
         return btnCAddDok;
     }
     
-    public String getfNIP(){
-        return tfNIP.getText();
+    
+    public String getfieldNIP(){
+        return fieldNIP.getText();
     }
     
-    public String getfNama(){
-        return tfNama.getText();
+    public String getfieldNama(){
+        return fieldNama.getText();
     }
     
     public int getSpinnerUmur(){
@@ -220,6 +222,14 @@ public class FormAddDok extends javax.swing.JFrame {
         return 0;
     }
     
+    //reset
+    public void resetView(){
+        fieldNIP.setText("");
+        fieldNama.setText("");
+        SpinnerUmur.setValue(this);
+        ComboBoxGelar.setSelectedIndex(0);
+    }
+    
     
     
 
@@ -228,6 +238,8 @@ public class FormAddDok extends javax.swing.JFrame {
     private javax.swing.JSpinner SpinnerUmur;
     private javax.swing.JButton btnAddDok;
     private javax.swing.JButton btnCAddDok;
+    private javax.swing.JTextField fieldNIP;
+    private javax.swing.JTextField fieldNama;
     private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
@@ -235,7 +247,5 @@ public class FormAddDok extends javax.swing.JFrame {
     private javax.swing.JLabel labelNIP;
     private javax.swing.JLabel labelNama;
     private javax.swing.JLabel labelUmur;
-    private javax.swing.JTextField tfNIP;
-    private javax.swing.JTextField tfNama;
     // End of variables declaration//GEN-END:variables
 }

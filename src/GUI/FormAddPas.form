@@ -68,9 +68,9 @@
                           <EmptySpace min="-2" pref="26" max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                  <Component id="tfNama" max="32767" attributes="0"/>
+                                  <Component id="fieldNama" max="32767" attributes="0"/>
                                   <Component id="ComboBoxGelar" alignment="0" min="-2" pref="116" max="-2" attributes="0"/>
-                                  <Component id="tfIDP" pref="234" max="32767" attributes="0"/>
+                                  <Component id="fieldIDP" pref="234" max="32767" attributes="0"/>
                               </Group>
                               <Component id="SpinnerUmur" min="-2" pref="64" max="-2" attributes="0"/>
                           </Group>
@@ -92,12 +92,12 @@
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelIDP" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfIDP" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldIDP" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
                       <Component id="labelNama" alignment="3" min="-2" max="-2" attributes="0"/>
-                      <Component id="tfNama" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="fieldNama" alignment="3" min="-2" max="-2" attributes="0"/>
                   </Group>
                   <EmptySpace type="separate" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -145,7 +145,7 @@
             <Property name="text" type="java.lang.String" value="Gelar"/>
           </Properties>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfNama">
+        <Component class="javax.swing.JTextField" name="fieldNama">
         </Component>
         <Component class="javax.swing.JButton" name="BtnAddPasien">
           <Properties>
@@ -174,7 +174,7 @@
             <AuxValue name="JavaCodeGenerator_TypeParameters" type="java.lang.String" value="&lt;String&gt;"/>
           </AuxValues>
         </Component>
-        <Component class="javax.swing.JTextField" name="tfIDP">
+        <Component class="javax.swing.JTextField" name="fieldIDP">
         </Component>
         <Component class="javax.swing.JSpinner" name="SpinnerUmur">
           <Properties>

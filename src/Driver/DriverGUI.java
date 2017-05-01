@@ -5,12 +5,19 @@
  */
 package Driver;
 
+import Controller.ControlMenu;
+import Model.App;
+
+
+
 /**
  *
  * @author Asus
  */
 public class DriverGUI {
     public static void main(String[] args) {
+        App apk = new App();
+        ControlMenu menu = new ControlMenu();
         
     }
 }
